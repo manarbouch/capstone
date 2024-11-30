@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Assessment Questionnaire</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Risk Assessment Questionnaire</h1>
+        <p class="text-center">Please answer the following questions to evaluate your financial risk tolerance:</p>
+
+        <form action="{{ url_for('main.result') }}" method="POST">
+            <div class="form-group">
+                <label for="goal">What is your primary financial goal?</label>
+                <select class="form-control" id="goal" name="goal" required>
+                    <option value="growth">Grow my wealth over time</option>
+                    <option value="income">Generate regular income</option>
+                    <option value="preservation">Preserve my capital</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="time_horizon">What is your investment time horizon?</label>
+                <select class="form-control" id="time_horizon" name="time_horizon" required>
+                    <option value="long">Long-term (10+ years)</option>
+                    <option value="medium">Medium-term (3-10 years)</option>
+                    <option value="short">Short-term (less than 3 years)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="reaction">How would you react if your investment value decreased by 20%?</label>
+                <select class="form-control" id="reaction" name="reaction" required>
+                    <option value="buy_more">Buy more investments at a lower price</option>
+                    <option value="wait">Wait for the market to recover</option>
+                    <option value="sell">Sell to prevent further losses</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="savings_rate">How much of your income do you save or invest regularly?</label>
+                <select class="form-control" id="savings_rate" name="savings_rate" required>
+                    <option value="high">High (20% or more)</option>
+                    <option value="moderate">Moderate (10-20%)</option>
+                    <option value="low">Low (less than 10%)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="experience">What is your level of investment experience?</label>
+                <select class="form-control" id="experience" name="experience" required>
+                    <option value="expert">Expert (extensive knowledge)</option>
+                    <option value="some">Some (basic knowledge)</option>
+                    <option value="none">None (no prior experience)</option>
+                </select>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Submit Questionnaire</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

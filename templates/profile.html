@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>User Profile</h1>
+        <div class="card p-4">
+            <h3>{{ user.email }}</h3>
+            <p>Completed Questionnaire: {{ user.completed_questionnaire }}</p>
+            <!-- Add more user data here as needed -->
+        </div>
+        <a href="{{ url_for('logout') }}" class="btn btn-danger mt-3">Logout</a>
+    </div>
+</body>
+</html>

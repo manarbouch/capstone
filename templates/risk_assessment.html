@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Assessment</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Risk Assessment</h1>
+        <form method="POST" action="{{ url_for('main.risk_assessment') }}">
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="financial_goals">What are your financial goals?</label>
+                <select id="financial_goals" name="financial_goals" class="form-control" required>
+                    <option value="short_term">Short-term gains</option>
+                    <option value="long_term">Long-term wealth accumulation</option>
+                    <option value="retirement">Retirement</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="investment_experience">Investment Experience:</label><br>
+                <input type="radio" id="beginner" name="investment_experience" value="beginner" required> Beginner
+                <input type="radio" id="intermediate" name="investment_experience" value="intermediate" required> Intermediate
+                <input type="radio" id="advanced" name="investment_experience" value="advanced" required> Advanced
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Assessment</button>
+        </form>
+    </div>
+</body>
+</html>
